@@ -1,7 +1,7 @@
 # Личный проект «Глейси»
 
 * Студент: [Vova Sharapov](https://up.htmlacademy.ru/htmlcss/15/user/244120).
-* Наставник: `Неизвестно`.
+* Наставник: [Павел Головин](https://htmlacademy.ru/profile/id166546).
 
 ---
 
