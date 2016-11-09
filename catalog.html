@@ -7,10 +7,10 @@
   </head>
   <body>
     <header class="main-header">
-    	<div class="container">
-    		<img src="images/Logo1.png" width="154" height="64" alt="Gllacy Shop">
-    		<nav class="main-navigaion">
+    	<div class="container clearfix">
+    		<nav class="main-navigation">
     			<ul>
+    			<li><img src="images/Logo1.png" width="154" height="64" alt="Gllacy Shop"></li>
     				<li><a href="#" class="selected">Каталог</a></li>
     					<ul class="main-navigation-dropdown">
     						<li><a href="#">Новинки</a></li>
@@ -23,28 +23,41 @@
     				<li><a href="#">О Компании</a></li>
     			</ul>
     		</nav>
-    		<div class="search">
-    			<a href=""><img src="images/search.png" width="17" height="17" alt="Поиск"></a>
-    			<form action="#" method="get" class="search-form">
-    				<label for="search-field">Что ищем?</label>
-    				<input type="text" name="search" id="search-field">
-    			</form>
-    		</div>
-    		<div class="user-block">
-    			<a href="#" class="login">Войти</a>
-    			<form action="#" method="get" class="login-form">
-    				<label for="mail-field">Электронная почта</label>
-    				<input type="text" name="mail" id="mail-field"><br>
-    				<label for="password-field">Пароль</label>
-    				<input type="password" name="mail" id="password-field"><br>
-    				<button type="submit">Войти</button><br>
-    				<a href="#">Забыли пароль?</a><br>
-    				<a href="#">Новая регистрация</a>
-    			</form>
-			</div>
-    		<div class="cart">
-    			<a href="#">2 товара</a>
-    		</div> 
+    		<ul class="navigation-forms">
+    			<li class="search">
+    				<a href="#">Поиск</a>
+    				<form action="#" method="get" class="search-form">
+    					<label for="search-field">Что ищем?</label>
+    					<input type="text" name="search" id="search-field">
+    				</form>
+    			</li>
+    			<li class="user-block">
+    				<a href="#" class="login">Войти</a>
+    				<form action="#" method="get" class="login-form">
+    					<label for="mail-field">Электронная почта</label>
+    					<input type="text" name="mail" id="mail-field"><br>
+    					<label for="password-field">Пароль</label>
+    					<input type="password" name="mail" id="password-field"><br>
+    					<button type="submit">Войти</button><br>
+    					<a href="#">Забыли пароль?</a><br>
+    					<a href="#">Новая регистрация</a>
+    				</form>
+				</li>
+    			<li class="cart">
+    				<a href="#">2 товара</a>
+    			</li> 
+    		</ul>
+    	</div>
+    	<div class="container breadcrumbs-time-phone clearfix">
+    		<div class="breadcrumbs">
+    			<ul>
+    				<li><a href="#">Главная</a></li>
+    				<li>&#187;</li>
+    				<li><a href="#">Каталог</a></li>
+    				<li>&#187;</li>
+    				<li>Сливочное</li>
+    			</ul>
+   		 	</div>
     		<div class="time-phone">
     			<p>
     				с 10 до 20, ежедневно<br>
@@ -53,17 +66,10 @@
     		</div>
     	</div>
     </header>
-    <div class="breadcrumbs">
-    	<ul>
-    		<li><a href="#">Главная</a></li>
-    		<li>&#187;</li>
-    		<li><a href="#">Каталог</a></li>
-    		<li>&#187;</li>
-    		<li>Сливочное</li>
-    	</ul>
-    </div>
-    <h1>Сливочное мороженое</h1>
-    <form action="#" method="get">
+    
+    <main class="container">
+    <h1 class="catalog-title">Сливочное мороженое</h1>
+    <form action="#" method="get" class="catalog-filter">
     	Сортировка:<br>
     	<select name="sort" id="sort-field">
     		<option value="popular">По популярности</option>
@@ -88,7 +94,7 @@
     	<input type="checkbox"> джемы &emsp;
     	<button type="submit">Применить</button>
     </form>
-    <section class="catalog">
+    <section class="catalog clearfix">
     	<article class="catalog-item">
     		<img src="images/item1.png" width="267" height="267" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
     		<h2>310 &#8381;<span>/кг</span></h2>
@@ -173,8 +179,9 @@
     		</ul>
     	</div>
     </section>
-    <footer class="main-footer">
-    	<div class="container">
+    </main>
+    <footer class="catalog-footer">
+    	<div class="container clearfix">
     		<section class="footer-social">
     			<a href="#" class="social-btn social-btn-tw">Twitter</a>
     			<a href="#" class="social-btn social-btn-inst">Instagram</a>
