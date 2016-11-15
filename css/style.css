@@ -121,6 +121,12 @@ h2 {
 	padding-right: 14px;
 }
 
+.main-navigation a.selected {
+	color: #FFFFFF;
+	background-color: #CE705B;
+	border-radius: 16px;
+}
+
 .main-navigation a:hover {
 	color: #2F2F2F;
 	background-color: #F7F6F3;
