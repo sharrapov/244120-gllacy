@@ -135,6 +135,14 @@ h2 {
 	border-radius: 16px;
 }
 
+.main-navigation a.logo-link,
+.main-navigation a.logo-link:hover, 
+.main-navigation a.logo-link:active {
+	padding: 0;
+	background-color: transparent;
+	box-shadow: none;
+}
+
 .main-navigation a:hover {
 	color: #2F2F2F;
 	background-color: #F7F6F3;
