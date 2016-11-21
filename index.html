@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <title>Gllacy Shop</title>
     <link href="css/style.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic,latin-ext" rel="stylesheet">
     <style>			
        #map {
         height: 400px;
@@ -12,20 +13,27 @@
        }
     </style>
   </head>
-  <body class="index-bg">
-    <header class="main-header">
-    	<div class="container clearfix">
+  <body>
+  	<input type="radio" id="btn-1" name="toggle" checked>
+    <input type="radio" id="btn-2" name="toggle">
+    <input type="radio" id="btn-3" name="toggle">
+  <div class="site-wrapper">
+  	<div class="content-wrapper">
+    <header class="container main-header">
+    	<div class="clearfix">
     		<nav class="main-navigation">
-    			<ul>
+    			<ul class="main-menu">
     				<li class="logo"><img src="img/logo.png" width="154" height="64" alt="Gllacy Shop"></li>
-    				<li><a href="#">Каталог</a></li>
-    					<ul class="main-navigation-dropdown">
+    				<li>
+    					<a href="#">Каталог</a>
+    					<ul class="sub-menu">
     						<li><a href="#">Новинки</a></li>
-    						<li><a href="#">Сливочное</a></li>
+    						<li><a href="catalog.html">Сливочное</a></li>
     						<li><a href="#">Щербеты</a></li>
     						<li><a href="#">Фруктовый лед</a></li>
     						<li><a href="#">Мелорин</a></li>
     					</ul>
+    				</li>
     				<li><a href="#">Доставка и оплата</a></li>
     				<li><a href="#">О Компании</a></li>
     			</ul>
@@ -33,45 +41,62 @@
     		<div class="navigation-forms">
     			<ul>
     			<li class="search">
-    				<a href="#">Поиск</a>
-    				<form action="#" method="get" class="search-form">
-    					<label for="search-field">Что ищем?</label>
-    					<input type="text" name="search" id="search-field">
-    				</form>
+    				<a href="#" class="search-link">Поиск</a>
     			</li>
     			<li class="user-block">
     				<a href="#" class="login">Войти</a>
-    				<form action="#" method="get" class="login-form">
-    					<label for="mail-field">Электронная почта</label>
-    					<input type="text" name="mail" id="mail-field"><br>
-    					<label for="password-field">Пароль</label>
-    					<input type="password" name="mail" id="password-field"><br>
-    					<button type="submit">Войти</button><br>
-    					<a href="#">Забыли пароль?</a><br>
-    					<a href="#">Новая регистрация</a>
-    				</form>
 				</li>
     			<li class="cart-empty">
-    				<a href="#">Корзина</a>
+    				<a href="#" class="cart-link">Корзина</a>
     			</li> 
     			</ul>
     		</div>
+    			<form class="search-form" action="#" method="get">
+    				<input type="text" class="search" name="search" id="search-field" required value="" placeholder="Что ищем?">
+    				<label for="search-field">Что ищем?</label>
+    			</form>
+    		<div class="user-block-login">
+    			<form class="user-block-login-form" action="#" method="get">
+    				<input type="text" class="login-mail" name="login-mail" id="login-mail-field" required value="" placeholder="Электронная почта">
+    				<label for="login-mail-field">Электронная почта</label>
+    				<input type="password" class="login-password" name="login-password" id="login-password-field" required value="" placeholder="Пароль">
+    				<label for="login-password-field">Пароль</label>
+    				<p><a href="#">Забыли пароль?</a>
+    				<a href="#">Новая регистрация</a></p>
+    				<button type="button" class="btn">Войти</button>
+    			</form>
+    		</div>
     	</div>
-    	<div class="container breadcrumbs-time-phone clearfix">
+    	<div class="breadcrumbs-time-phone clearfix">
     		<div class="time-phone">
     			<p>
     				с 10 до 20, ежедневно<br>
-    				<a href="tel: +7 812 450 25 25">8 812 450-25-25</a>	
+    				<a href="tel:+78124502525">8 812 450-25-25</a>	
     			</p>
     		</div>
     	</div>
     </header>
     
     <main class="container">
-    <div class="promo">
-    			<h1>Крем-брюле и пломбир<br> с малиновым джемом</h1>
-    			<a href="#" class="btn">Давайте оба</a>
+   		<div class="slider">
+    		<div class="slide" id="slide1">
+    			<div class="slide-title"><h1>Крем-брюле и пломбир с малиновым джемом</h1></div>
+    			<a href="#" class="btn slide-btn">Давайте оба</a>
     		</div>
+    		<div class="slide" id="slide2">
+    			<div class="slide-title"><h1>Шоколадный пломбир и лимонный щербет</h1></div>
+    			<a href="#" class="btn slide-btn">Давайте оба</a>
+    		</div>
+    		<div class="slide" id="slide3">
+    			<div class="slide-title"><h1>Пломбир с помадкой и клубничный щербет</h1></div>
+    			<a href="#" class="btn slide-btn">Давайте оба</a>
+    		</div>
+    		<div class="slider-controls">
+    			<label for="btn-1"></label>
+    			<label for="btn-2"></label>
+    			<label for="btn-3"></label>
+    		</div>
+    	</div>
     <section class="promo-cards clearfix">
     	<div class="sale1">
     		<h2>Малинка даром!</h2>
@@ -142,7 +167,8 @@
     		<div class="subscribe-content">
     		<p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой не нужной ерунды. Честно =) </p>
     		<form class="subscribe-form" action="#" method="get">
-    			<input type="text" name="subscribe-mail" id="subscribe-mail-field" value="" placeholder="Электронная почта">
+    			<input type="text" class="subscribe-mail" name="subscribe-mail" id="subscribe-mail-field" required value="" placeholder="Электронная почта">
+    			<label for="subscribe-mail-field">Электронная почта</label>
     			<button type="button" class="btn">Отправить</button>
     		</form>
     		</div>
@@ -160,7 +186,7 @@
     	   <strong>8 812 450-25-25</strong><br>
     	   (с 10 до 20 ежедневно)
     	</p>
-    	<a href="#" class="btn">Форма обратной связи</a>
+    	<a href="#" class="btn feedback-button">Форма обратной связи</a>
     	</section>
 	</div>
     
@@ -190,7 +216,73 @@
     		</section>
     	</div>
     </footer>
-    
+    <div class="feedback-modal-background">
+    	<div class="feedback-modal">
+    	<h2>Мы обязательно вам ответим!</h2>
+    	<button class="feedback-modal-close" type="button" title="Закрыть">Закрыть</button>
+    	<form class="feedback-modal-form" action="#" method="get">
+    	<input type="text" class="feedback-modal-name" name="feedback-modal-name" id="feedback-modal-name-field" required value="" placeholder="Как вас зовут?">
+    	<label for="feedback-modal-name-field">Как вас зовут?</label>
+    	<input type="text" class="feedback-modal-mail" name="feedback-modal-mail" id="feedback-modal-mail-field" required value="" placeholder="Ваша почта для ответа?">
+    	<label for="feedback-modal-mail-field">Ваша почта для ответа?</label>
+    	<textarea name="feedback-modal-message" id="feedback-modal-message-field" cols="50" rows="10" required class="feedback-modal-message" placeholder="Напишите что-нибудь..."></textarea>
+    	<label for="feedback-modal-message-field">Напишите что-нибудь...</label>
+    	<button type="button" class="btn">Отправить</button>
+		</form>
+    	</div>
+    </div>
+    	</div>
+  </div>
+    <script>
+		var link = document.querySelector(".login");
+		var popup = document.querySelector(".user-block-login");
+		var body = document.querySelector("body");
+		var search = document.querySelector(".search-link");
+		var searchModal = document.querySelector(".search-form");
+		var feedbackButton = document.querySelector(".feedback-button");
+		var feedbackModal = document.querySelector(".feedback-modal-background");
+		var close = document.querySelector(".feedback-modal-close");
+		
+		link.addEventListener("mouseover", function(event){
+			event.preventDefault();
+			popup.classList.add("user-block-login-show");
+		})
+		
+		popup.addEventListener("mouseover", function(event){
+			event.preventDefault();
+			popup.classList.add("user-block-login-show");
+		})
+		
+		popup.addEventListener("mouseout", function(event){
+			event.preventDefault();
+			popup.classList.remove("user-block-login-show");
+		})
+		
+		search.addEventListener("mouseover", function(event){
+			event.preventDefault();
+			searchModal.classList.add("search-form-show");
+		})
+		
+		searchModal.addEventListener("mouseover", function(event){
+			event.preventDefault();
+			searchModal.classList.add("search-form-show");
+		})
+		
+		searchModal.addEventListener("mouseout", function(event){
+			event.preventDefault();
+			searchModal.classList.remove("search-form-show");
+		})
+		
+		feedbackButton.addEventListener("click", function(event){
+			event.preventDefault();
+			feedbackModal.classList.add("feedback-modal-background-show");
+		})
+		
+		close.addEventListener("click", function(event){
+			event.preventDefault();
+			feedbackModal.classList.remove("feedback-modal-background-show");
+		})
+	</script>
     <script>
       function initMap() {
         var uluru = {lat: 59.938554, lng: 30.32248};

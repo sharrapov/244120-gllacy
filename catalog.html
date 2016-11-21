@@ -4,23 +4,26 @@
     <meta charset="utf-8">
     <title>Gllacy Shop - Сливочное мороженое</title>
     <link href="css/style.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic,latin-ext" rel="stylesheet">
   </head>
   
   <body class="catalog-bg">
-    <header class="main-header">
-    	<div class="container clearfix">
+    <header class="container main-header">
+    	<div class="clearfix">
     		<nav class="main-navigation">
-    			<ul>
-    			<li class="logo"><a href="index.html" class="logo-link"><img src="img/logo.png" width="154" height="64" alt="Gllacy Shop"></a></li>
-    				<li><a href="#" class="selected">Каталог</a></li>
-    					<ul class="main-navigation-dropdown">
+    		<ul class="main-menu">
+    				<li class="logo"><a href="index.html" class="logo-link"><img src="img/logo.png" width="154" height="64" alt="Gllacy Shop"></a></li>
+    				<li>
+    					<a href="#" class="selected">Каталог</a>
+    					<ul class="sub-menu">
     						<li><a href="#">Новинки</a></li>
-    						<li><a href="#">Сливочное</a></li>
+    						<li><a class="sub-menu-selected">Сливочное</a></li>
     						<li><a href="#">Щербеты</a></li>
     						<li><a href="#">Фруктовый лед</a></li>
     						<li><a href="#">Мелорин</a></li>
     					</ul>
+    				</li>
     				<li><a href="#">Доставка и оплата</a></li>
     				<li><a href="#">О Компании</a></li>
     			</ul>
@@ -28,31 +31,57 @@
     		<div class="navigation-forms">
     			<ul>
     			<li class="search">
-    				<a href="#">Поиск</a>
-    				<form action="#" method="get" class="search-form">
-    					<label for="search-field">Что ищем?</label>
-    					<input type="text" name="search" id="search-field">
-    				</form>
+    				<a href="#" class="search-link">Поиск</a>
     			</li>
     			<li class="user-block">
     				<a href="#" class="login">Войти</a>
-    				<form action="#" method="get" class="login-form">
-    					<label for="mail-field">Электронная почта</label>
-    					<input type="text" name="mail" id="mail-field"><br>
-    					<label for="password-field">Пароль</label>
-    					<input type="password" name="mail" id="password-field"><br>
-    					<button type="submit">Войти</button><br>
-    					<a href="#">Забыли пароль?</a><br>
-    					<a href="#">Новая регистрация</a>
-    				</form>
 				</li>
     			<li class="cart">
-    				<a href="#">2 товара</a>
+    				<a href="#" class="cart-link">2 товара</a>
     			</li>
     			</ul> 
     		</div>
+    		<form class="search-form" action="#" method="get">
+    				<input type="text" class="search" name="search" id="search-field" required value="" placeholder="Что ищем?">
+    				<label for="search-field">Что ищем?</label>
+    			</form>
+    		<div class="user-block-login">
+    			<form class="user-block-login-form" action="#" method="get">
+    				<input type="text" class="login-mail" name="login-mail" id="login-mail-field" value="" placeholder="Электронная почта">
+    				<label for="login-mail-field">Электронная почта</label>
+    				<input type="password" class="login-password" name="login-password" id="login-password-field" value="" placeholder="Пароль">
+    				<label for="login-password-field">Пароль</label>
+    				<p><a href="#">Забыли пароль?</a>
+    				<a href="#">Новая регистрация</a></p>
+    				<button type="button" class="btn">Войти</button>
+    			</form>
+    		</div>
+    		<div class="cart-modal">
+    	<table>
+    		<tr>
+    			<td><button class="cart-modal-close" type="button" title="Закрыть">Закрыть</button></td>
+    			<td><img src="img/item1-mini.png" width="33" height="33" alt="Пломбир с апельсиновым джемом"></td>
+    			<td>Пломбир с апельсиновым джемом</td>
+    			<td class="number">1,5 кг х <span>200 руб.</span></td>
+    			<td class="number">300 руб.</td>
+    		</tr>
+    		<tr>
+    			<td><button class="cart-modal-close" type="button" title="Закрыть">Закрыть</button></td>
+    			<td><img src="img/item2-mini.png" width="33" height="33" alt="Клубничный пломбир с присыпкой 
+из белого шоколада"></td>
+    			<td>Клубничный пломбир с присыпкой 
+из белого шоколада</td>
+    			<td class="number">1,5 кг х <span>200 руб.</span></td>
+    			<td class="number">450 руб.</td>
+    		</tr>
+    		<tr>
+    			<td colspan="5" class="total">Итого: 750 руб.</td>
+    		</tr>
+    	</table>
+    	<button type="button" class="btn button">Оформить заказ</button>
+    </div>
     	</div>
-    	<div class="container breadcrumbs-time-phone clearfix">
+    	<div class="breadcrumbs-time-phone clearfix">
     		<div class="breadcrumbs">
     			<ul>
     				<li><a href="index.html">Главная</a></li>
@@ -65,7 +94,7 @@
     		<div class="time-phone">
     			<p>
     				с 10 до 20, ежедневно<br>
-    				<a href="tel: +7 812 450 25 25">8 812 450-25-25</a>	
+    				<a href="tel:+78124502525">8 812 450-25-25</a>	
     			</p>
     		</div>
     	</div>
@@ -74,29 +103,96 @@
     <main class="container">
     <h1 class="catalog-title">Сливочное мороженое</h1>
     <form action="#" method="get" class="catalog-filter">
-    	Сортировка:<br>
-    	<select name="sort" id="sort-field">
-    		<option value="popular">По популярности</option>
-    		<option value="cheap-first">Сначала недорогие</option>
-    		<option value="costly-first">Сначала дорогие</option>
-    		<option value="fattiness">По жирности</option>
-    	</select>&emsp;
-    	Цена: 100 руб. - до 500 руб.
-    	<input type="text"> - <input type="text">&emsp;
-    	Жирность:
-    	<label>
-    		<input type="radio" name="fattiness" value="0"> 0% &ensp;
-    		<input type="radio" name="fattiness" value="under 10" checked> до 10% &ensp;
-    		<input type="radio" name="fattiness" value="under 30"> до 30% &ensp;
-    		<input type="radio" name="fattiness" value="over 30"> свыше 30% 
-    	</label><br>
-    	Наполнители:
-    	<input type="checkbox" checked> шоколадные &ensp; 
-    	<input type="checkbox" checked> сахарные присыпки &ensp; 
-    	<input type="checkbox"> фрукты &ensp; 
-    	<input type="checkbox"> сиропы &ensp; 
-    	<input type="checkbox"> джемы &emsp;
-    	<button type="submit">Применить</button>
+   		<div class="form-element">
+			<span>Сортировка:</span>
+    		<div class="select-style">
+    		<select name="sort" id="sort-field">
+    			<option value="popular">по популярности</option>
+    			<option value="cheap-first">сначала недорогие</option>
+    			<option value="costly-first">сначала дорогие</option>
+    			<option value="fattiness">по жирности</option>
+    		</select>
+    		</div>
+    	</div>
+    	<div class="form-element range-filter">
+    		<div class="price-controls">
+    			Цена: <label for="min-price-id">100</label> руб.<input type="text" class="min-price" name="min-price" id="min-price-id" value="100">
+    			&#8211; <label for="max-price-id">500</label> руб.<input type="text" class="max-price" name="max-price" id="max-price-id" value="500">
+    		</div>
+    		<div class="range-controls">
+    			<div class="scale">
+    				<div class="bar" style="margin-left: 22px; margin-right: 60px;"></div>
+    			</div>
+    			<div class="toggle min-toggle"></div>
+    			<div class="toggle max-toggle"></div>
+    		</div>
+    	</div>
+    	<div class="form-element">
+			<span>Жирность:</span>
+    		<div class="radio-style">
+    			<label class="form-radio-button">
+    				<input type="radio" name="fattiness" value="0">
+    				<span class="radio-indicator"></span>
+    				0%
+				</label>
+  				<label class="form-radio-button">
+    				<input type="radio" name="fattiness" value="under 10" checked>
+    				<span class="radio-indicator"></span>
+    				до 10%
+				</label>
+   				<label class="form-radio-button">
+    				<input type="radio" name="fattiness" value="under 30">
+    				<span class="radio-indicator"></span>
+    				до 30%
+				</label>
+   				<label class="form-radio-button">
+    				<input type="radio" name="fattiness" value="over 30">
+    				<span class="radio-indicator"></span>
+    				свыше 30%
+				</label>
+    				<!--<input type="radio" name="fattiness" value="under 10" checked> до 10% &ensp;
+    				<input type="radio" name="fattiness" value="under 30"> до 30% &ensp;
+    				<input type="radio" name="fattiness" value="over 30"> свыше 30% 
+    			</label>-->
+    		</div>
+    	</div>
+    	<div class="form-element">
+			<span>Наполнители:</span>
+    		<div class="checkbox-style">
+    		<label class="form-checkbox">
+    			<input type="checkbox" name="chocolate" checked>
+    			<span class="checkbox-indicator"></span> 
+    			шоколадные
+    		</label>
+    		<label class="form-checkbox">
+    			<input type="checkbox" name="sugar" checked>
+    			<span class="checkbox-indicator"></span> 
+    			сахарные присыпки
+    		</label>
+    		<label class="form-checkbox">
+    			<input type="checkbox" name="fruit">
+    			<span class="checkbox-indicator"></span> 
+    			фрукты
+    		</label>
+    		<label class="form-checkbox">
+    			<input type="checkbox" name="syrup">
+    			<span class="checkbox-indicator"></span> 
+    			сиропы
+    		</label>
+    		<label class="form-checkbox">
+    			<input type="checkbox" name="jam">
+    			<span class="checkbox-indicator"></span> 
+    			джемы
+    		</label>
+    			<!--<input type="checkbox" checked> сахарные присыпки &ensp; 
+    			<input type="checkbox"> фрукты &ensp; 
+    			<input type="checkbox"> сиропы &ensp; 
+    			<input type="checkbox"> джемы -->
+    		</div>
+    	</div>
+    	<div class="form-element">
+			<button type="submit">Применить</button>
+    	</div>
     </form>
     <section class="catalog clearfix">
     	<article class="catalog-item">
@@ -110,7 +206,7 @@
     	<article class="catalog-item">
     	<div class="wrap">
     		<img src="img/item2.png" width="267" height="267" alt="Сливочно-кофейное с кусочками шоколада">
-    		<h2>380 &#8381;<span>/кг</span></h2>
+    		<h2>380 ₽<span>/кг</span></h2>
     		<p><a href="#">Сливочно-кофейное с кусочками шоколада</a></p>
     		<a href="#" class="btn">Быстрый просмотр</a>
     	</div>
@@ -151,7 +247,7 @@
     	<div class="wrap">
     		<img src="img/item7.png" width="267" height="267" alt="Сливочно-лимонное с карамельной присыпкой">
     		<h2>375 &#8381;<span>/кг</span></h2>
-    		<p><a href="##">Сливочно-лимонное с карамельной присыпкой</a></p>
+    		<p><a href="#">Сливочно-лимонное с карамельной присыпкой</a></p>
     		<a href="#" class="btn">Быстрый просмотр</a>
     	</div>
     	</article>
@@ -235,5 +331,60 @@
     		</section>
     	</div>
     </footer>
+    
+    <script>
+		var link = document.querySelector(".login");
+		var popup = document.querySelector(".user-block-login");
+		var body = document.querySelector("body");
+		var search = document.querySelector(".search-link");
+		var searchModal = document.querySelector(".search-form");
+		var cart = document.querySelector(".cart-link");
+		var cartModal = document.querySelector(".cart-modal");
+		
+		link.addEventListener("mouseover", function(event){
+			event.preventDefault();
+			popup.classList.add("user-block-login-show");
+		})
+		
+		popup.addEventListener("mouseover", function(event){
+			event.preventDefault();
+			popup.classList.add("user-block-login-show");
+		})
+		
+		popup.addEventListener("mouseout", function(event){
+			event.preventDefault();
+			popup.classList.remove("user-block-login-show");
+		})
+		
+		search.addEventListener("mouseover", function(event){
+			event.preventDefault();
+			searchModal.classList.add("search-form-show");
+		})
+		
+		searchModal.addEventListener("mouseover", function(event){
+			event.preventDefault();
+			searchModal.classList.add("search-form-show");
+		})
+		
+		searchModal.addEventListener("mouseout", function(event){
+			event.preventDefault();
+			searchModal.classList.remove("search-form-show");
+		})
+		
+		cart.addEventListener("mouseover", function(event){
+			event.preventDefault();
+			cartModal.classList.add("cart-modal-show");
+		})
+		
+		cartModal.addEventListener("mouseover", function(event){
+			event.preventDefault();
+			cartModal.classList.add("cart-modal-show");
+		})
+		
+		cartModal.addEventListener("mouseout", function(event){
+			event.preventDefault();
+			cartModal.classList.remove("cart-modal-show");
+		})
+	</script>
   </body>
 </html>
