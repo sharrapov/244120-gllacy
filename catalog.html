@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Gllacy Shop - Сливочное мороженое</title>
-    <link href="css/style.css" rel="stylesheet">
     <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic,latin-ext" rel="stylesheet">
   </head>
   
@@ -24,8 +24,8 @@
     						<li><a href="#">Мелорин</a></li>
     					</ul>
     				</li>
-    				<li><a href="#">Доставка и оплата</a></li>
-    				<li><a href="#">О Компании</a></li>
+    				<li><a href="#" class="menu-link">Доставка и оплата</a></li>
+    				<li><a href="#" class="menu-link">О Компании</a></li>
     			</ul>
     		</nav>
     		<div class="navigation-forms">
@@ -34,7 +34,7 @@
     				<a href="#" class="search-link">Поиск</a>
     			</li>
     			<li class="user-block">
-    				<a href="#" class="login">Войти</a>
+    				<a href="#" class="login">Вход</a>
 				</li>
     			<li class="cart">
     				<a href="#" class="cart-link">2 товара</a>
@@ -47,9 +47,9 @@
     			</form>
     		<div class="user-block-login">
     			<form class="user-block-login-form" action="#" method="get">
-    				<input type="text" class="login-mail" name="login-mail" id="login-mail-field" value="" placeholder="Электронная почта">
+    				<input type="text" class="login-mail" name="login-mail" id="login-mail-field" required value="" placeholder="Электронная почта">
     				<label for="login-mail-field">Электронная почта</label>
-    				<input type="password" class="login-password" name="login-password" id="login-password-field" value="" placeholder="Пароль">
+    				<input type="password" class="login-password" name="login-password" id="login-password-field" required value="" placeholder="Пароль">
     				<label for="login-password-field">Пароль</label>
     				<p><a href="#">Забыли пароль?</a>
     				<a href="#">Новая регистрация</a></p>
@@ -67,10 +67,8 @@
     		</tr>
     		<tr>
     			<td><button class="cart-modal-close" type="button" title="Закрыть">Закрыть</button></td>
-    			<td><img src="img/item2-mini.png" width="33" height="33" alt="Клубничный пломбир с присыпкой 
-из белого шоколада"></td>
-    			<td>Клубничный пломбир с присыпкой 
-из белого шоколада</td>
+    			<td><img src="img/item2-mini.png" width="33" height="33" alt="Клубничный пломбир с присыпкой из белого шоколада"></td>
+    			<td>Клубничный пломбир с присыпкой из белого шоколада</td>
     			<td class="number">1,5 кг х <span>200 руб.</span></td>
     			<td class="number">450 руб.</td>
     		</tr>
@@ -150,10 +148,6 @@
     				<span class="radio-indicator"></span>
     				свыше 30%
 				</label>
-    				<!--<input type="radio" name="fattiness" value="under 10" checked> до 10% &ensp;
-    				<input type="radio" name="fattiness" value="under 30"> до 30% &ensp;
-    				<input type="radio" name="fattiness" value="over 30"> свыше 30% 
-    			</label>-->
     		</div>
     	</div>
     	<div class="form-element">
@@ -184,10 +178,6 @@
     			<span class="checkbox-indicator"></span> 
     			джемы
     		</label>
-    			<!--<input type="checkbox" checked> сахарные присыпки &ensp; 
-    			<input type="checkbox"> фрукты &ensp; 
-    			<input type="checkbox"> сиропы &ensp; 
-    			<input type="checkbox"> джемы -->
     		</div>
     	</div>
     	<div class="form-element">
@@ -327,64 +317,10 @@
     		</section>
     		<section class="footer-copyright">
     			<img src="img/academy-logo.png" width="108" height="38" alt="HTML Academy"><br>
-    			Сделано в <a href="#">HTML Academy</a> 	&#169; 2016
+    			<p>Сделано в <a href="#">HTML Academy</a> 	&#169; 2016</p>
     		</section>
     	</div>
     </footer>
-    
-    <script>
-		var link = document.querySelector(".login");
-		var popup = document.querySelector(".user-block-login");
-		var body = document.querySelector("body");
-		var search = document.querySelector(".search-link");
-		var searchModal = document.querySelector(".search-form");
-		var cart = document.querySelector(".cart-link");
-		var cartModal = document.querySelector(".cart-modal");
-		
-		link.addEventListener("mouseover", function(event){
-			event.preventDefault();
-			popup.classList.add("user-block-login-show");
-		})
-		
-		popup.addEventListener("mouseover", function(event){
-			event.preventDefault();
-			popup.classList.add("user-block-login-show");
-		})
-		
-		popup.addEventListener("mouseout", function(event){
-			event.preventDefault();
-			popup.classList.remove("user-block-login-show");
-		})
-		
-		search.addEventListener("mouseover", function(event){
-			event.preventDefault();
-			searchModal.classList.add("search-form-show");
-		})
-		
-		searchModal.addEventListener("mouseover", function(event){
-			event.preventDefault();
-			searchModal.classList.add("search-form-show");
-		})
-		
-		searchModal.addEventListener("mouseout", function(event){
-			event.preventDefault();
-			searchModal.classList.remove("search-form-show");
-		})
-		
-		cart.addEventListener("mouseover", function(event){
-			event.preventDefault();
-			cartModal.classList.add("cart-modal-show");
-		})
-		
-		cartModal.addEventListener("mouseover", function(event){
-			event.preventDefault();
-			cartModal.classList.add("cart-modal-show");
-		})
-		
-		cartModal.addEventListener("mouseout", function(event){
-			event.preventDefault();
-			cartModal.classList.remove("cart-modal-show");
-		})
-	</script>
+    <script src="js/script.js"></script>
   </body>
 </html>
