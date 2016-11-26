@@ -1,5 +1,6 @@
 var link = document.querySelector(".login");
 var popup = document.querySelector(".user-block-login");
+var mainNavigation = document.querySelector(".main-navigation");
 var body = document.querySelector("body");
 var search = document.querySelector(".search-link");
 var searchModal = document.querySelector(".search-form");	
@@ -13,11 +14,13 @@ var form = feedbackModal && feedbackModal.querySelector("form");
 var login = feedbackModal && feedbackModal.querySelector("[name=feedback-modal-name]");
 var mail = feedbackModal && feedbackModal.querySelector("[name=feedback-modal-mail]");
 var message = feedbackModal && feedbackModal.querySelector("[name=feedback-modal-message]");
-var storage = localStorage.getItem("login");
+var storage = localStorage && localStorage.getItem("login");
 
 link.addEventListener("mouseover", function(event){
 	event.preventDefault();
 	popup.classList.add("user-block-login-show");
+	searchModal.classList.remove("search-form-show");
+	cartModal.classList.remove("cart-modal-show");
 });
 		
 popup.addEventListener("mouseover", function(event){
@@ -29,10 +32,11 @@ popup.addEventListener("mouseout", function(event){
 	event.preventDefault();
 	popup.classList.remove("user-block-login-show");
 });
-		
+
 search.addEventListener("mouseover", function(event){
 	event.preventDefault();
 	searchModal.classList.add("search-form-show");
+	popup.classList.remove("user-block-login-show");
 });
 		
 searchModal.addEventListener("mouseover", function(event){
@@ -45,11 +49,23 @@ searchModal.addEventListener("mouseout", function(event){
 	searchModal.classList.remove("search-form-show");
 });
 
+cart.addEventListener("mouseover", function(event){
+	event.preventDefault();
+	popup.classList.remove("user-block-login-show");
+});
+
+mainNavigation.addEventListener("mouseover", function(event){
+	event.preventDefault();
+	searchModal.classList.remove("search-form-show");
+});
+
 if (cartModal) {
 		
 	cart.addEventListener("mouseover", function(event){
 		event.preventDefault();
 		cartModal.classList.add("cart-modal-show");
+		popup.classList.remove("user-block-login-show");
+		searchModal.classList.remove("search-form-show");
 	});
 		
 	cartModal.addEventListener("mouseover", function(event){
@@ -67,7 +83,11 @@ if (cartModal) {
 if (form) {
 
 	feedbackButton.addEventListener("click", function(event){
-		event.preventDefault();
+		if (event.preventDefault) { 
+    		event.preventDefault(); 
+  		} else { 
+    		event.returnValue = false;
+  		}	
 		feedbackModal.classList.add("feedback-modal-background-show");
 		feedbackForm.classList.add("feedback-modal-show");
 		login.focus();
